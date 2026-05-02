@@ -10,7 +10,7 @@ on: #Definir quando o pipeline será disparado.
   workflow_dispatch: #habilitar o botão "Run workflow" no Github Actions.
 
 jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criando.
- #Primeiro job: build
+  # Primeiro job: build
  build:
     runs-on: ubuntu-latest #Imagem da maquina usada no CI.
    
@@ -35,7 +35,7 @@ jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criand
           NEXT_PUBLIC_TMDB_API_KEY: ${{ secrets.NEXT_PUBLIC_TMDB_API_KEY }}
           NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL }}
  
- #Segundo job: tests
+  # Segundo job: tests
   tests:
     runs-on: ubuntu-latest #Imagem da maquina usada no CI.
     needs: build
