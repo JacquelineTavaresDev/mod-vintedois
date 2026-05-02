@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './DetalheFilme.module.css';
 import { getMovieDetails } from '@/src/lib/api/tmdb';
 
