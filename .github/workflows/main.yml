@@ -58,6 +58,6 @@ jobs:  #Definir um conjunto de passos para a etapa do pipeline que estamos crian
       - name: Verificar formatação
         run: npm run format -- --check
         
-        - name: Rodar testes
-          run: npm run test
+      - name: Rodar testes
+        run: npm run test
         
