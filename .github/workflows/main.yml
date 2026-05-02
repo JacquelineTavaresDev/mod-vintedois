@@ -60,6 +60,9 @@ jobs:  #Definir um conjunto de passos para a etapa do pipeline que estamos crian
         
       - name: Rodar testes
         run: npm run test
+        env:
+          NEXT_PUBLIC_TMDB_BASE_URL: https://api.themoviedb.org/3
+          NEXT_PUBLIC_TMDB_API_KEY: test_key
         
   deploy:  #Terceiro job: deploy automatico do Vercel
     runs-on: ubuntu-latest #Imagem da maquina usada no CI.
