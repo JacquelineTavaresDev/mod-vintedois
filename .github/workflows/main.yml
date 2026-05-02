@@ -25,3 +25,7 @@ jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criand
         
       - name: Rodar o build
         run: npm run build
+        env:
+          NEXT_PUBLIC_TMDB_BASE_URL: ${{ vars.NEXT_PUBLIC_TMDB_BASE_URL }}
+          NEXT_PUBLIC_TMDB_API_KEY: ${{ secrets.NEXT_PUBLIC_TMDB_API_KEY }}
+          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL }}
