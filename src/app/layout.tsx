@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Cinelista',
+  title: 'CineLista',
   description:
     'No Cinelista, você encontra os títulos mais populares, em alta e melhor avaliados em um só lugar.',
 };
