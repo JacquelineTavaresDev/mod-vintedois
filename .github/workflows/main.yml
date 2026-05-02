@@ -13,7 +13,7 @@ jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criand
    
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
       
       - name: Instalação do Node
         uses: actions/setup-node@v4
