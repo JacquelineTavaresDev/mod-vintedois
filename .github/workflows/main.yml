@@ -10,8 +10,7 @@ on: #Definir quando o pipeline será disparado.
   workflow_dispatch: #habilitar o botão "Run workflow" no Github Actions.
 
 jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criando.
-  # Primeiro job: build
- build:
+  build:  #Primeiro job: build
     runs-on: ubuntu-latest #Imagem da maquina usada no CI.
    
     steps:
@@ -35,31 +34,30 @@ jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criand
           NEXT_PUBLIC_TMDB_API_KEY: ${{ secrets.NEXT_PUBLIC_TMDB_API_KEY }}
           NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL }}
  
-  # Segundo job: tests
-  tests:
-    runs-on: ubuntu-latest #Imagem da maquina usada no CI.
-    needs: build
+   tests:  #Segundo job: tests
+      runs-on: ubuntu-latest #Imagem da maquina usada no CI.
+      needs: build
    
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
-      
-      - name: Instalação do Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: "npm"
-          cache-dependency-path: package-lock.json
-    
-      - name: Instalação das depêndencias
-        run: npm install
+      steps:
+        - name: Checkout do código
+          uses: actions/checkout@v4
         
-      - name: Rodar lint
-        run: npm run lint
-
-      - name: Verificar formatação
-        run: npm run format -- -- check
+        - name: Instalação do Node
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20'
+            cache: "npm"
+            cache-dependency-path: package-lock.json
       
-      - name: Rodar testes
-        run: npm run test
+        - name: Instalação das depêndencias
+          run: npm install
+          
+        - name: Rodar lint
+          run: npm run lint
+  
+        - name: Verificar formatação
+          run: npm run format -- --check
+        
+        - name: Rodar testes
+          run: npm run test
         
