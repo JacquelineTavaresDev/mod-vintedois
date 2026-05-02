@@ -6,7 +6,7 @@ on: #Definir quando o pipeline será disparado.
       - main
     paths:  #só dispara se arquivos nessas pastas mudarem
       - "src/**"  #só mudanças no código fonte
-      - ".github/worflows/**"  #mudanças nos próprios pipelines
+      - ".github/workflows/**"  #mudanças nos próprios pipelines
   workflow_dispatch: #habilitar o botão "Run workflow" no Github Actions.
 
 jobs: #Definir um conjunto de passos para a etapa do pipeline que estamos criando.
